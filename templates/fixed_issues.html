@@ -1,0 +1,49 @@
+{% extends "index.html" %}{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Issues</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fixed Issues</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Issue ID</th>
+                <th>Severity</th>
+                <th>Description</th>
+                <th>Status</th>
+                <!-- Add more columns as needed from issues fixed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for issue in issues %}
+            <tr>
+                <td>{{ issue.id }}</td>
+                <td>{{ issue.severity }}</td>
+                <td>{{ issue.description }}</td>
+                <td>{{ issue.status }}</td>
+                <!-- Add more columns as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

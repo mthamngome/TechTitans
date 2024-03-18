@@ -1,0 +1,25 @@
+{% extends "index.html" %}{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Fixed</title>
+</head>
+<body>
+    <h1>Issue Fixed</h1>
+    <form method="post">
+        <label for="time_fixed">Time Issue Fixed:</label>
+        <input type="datetime-local" id="time_fixed" name="time_fixed" required><br><br>
+
+        <label for="time_taken">Time Taken to Fix (in minutes):</label>
+        <input type="number" id="time_taken" name="time_taken" min="1" required><br><br>
+
+        <label for="description">Description of Fix:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+{% endblock %}

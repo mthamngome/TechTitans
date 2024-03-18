@@ -1,0 +1,38 @@
+
+{% extends "index.html" %}{% block content %}
+<html lang="en">
+<form method="post">
+        <table border ="1">
+             <tr>
+                <th>Issue ID</th>
+                <th>Severity</th>
+                <th>Description</th>
+                <th>Staff Member</th>
+            </tr>
+
+            <tr>
+                <td><label for="selected_issue">Select Issue:</label></td>
+
+                <td>
+                    <select id="selected_issue" name="selected_issue">
+                        {% for issue in issues %}
+                            <option value="{{ issue.id }}">{{ issue.description }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="selected_staff">Select Staff Member:</label></td>
+                <td>
+                    <select id="selected_staff" name="selected_staff">
+                        {% for staff in staff_members %}
+                            <option value="{{ staff.id }}">{{ staff.username }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <button type="submit">Allocate</button>
+    </form>
+{% endblock %}

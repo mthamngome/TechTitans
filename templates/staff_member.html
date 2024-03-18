@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <h1>Allocated Issues</h1>
+  <table border="1">
+    <tr>
+      <th>Issue ID</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    {% for issue in allocated_issues %}
+    <tr>
+      <td>{{ issue.id }}</td>
+      <td>{{ issue.description }}</td>
+      <td>{{ issue.status }}</td>
+      <td>
+        {% if issue.status == 'issue to be fixed' %}
+          <form method="post" action="{{ url_for('staff_member') }}">
+            <input type="hidden" name="issue_id" value="{{ issue.id }}">
+            <button type="submit">Accept</button>
+          </form>
+        {% else %}
+          Already Accepted
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

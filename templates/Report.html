@@ -1,0 +1,93 @@
+{% extends "index.html" %}{% block content %}
+
+<h2> Please Report Issue</h2>
+
+<form action="/Report" method="post" enctype="multipart/form-data">
+
+
+
+    <label for="block">Which block?:</label><br>
+    <select id="block" name="block" required>
+        <option value="choose">...</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+         <option value="D">D</option>
+         <option value="E">E</option>
+         <option value="F">F</option>
+         <option value="G">G</option>
+         <option value="H">H</option>
+         <option value="I">I</option>
+         <option value="J">J</option>
+         <option value="K">K</option>
+         <option value="L">L</option>
+         <option value="M">M</option>
+         <option value="N">N</option>
+         <option value="O">O</option>
+         <option value="P">P</option>
+         <option value="Q">Q</option>
+         <option value="R">R</option>
+         <option value="S">S</option>
+         <option value="U">U</option>
+         <option value="V">V</option>
+         <option value="W">W</option>
+         <option value="X">X</option>
+         <option value="Y">Y</option>
+         <option value="Z">Z</option>
+
+    </select><br><br>
+
+    <label for="floor">Which floor?</label><br>
+    <input type="text" id="floor" name="floor" required><br><br>
+
+    <label for="room">Which room?</label><br>
+    <input type="text" id="room" name="room" required><br><br>
+
+    <label for="issue_type">Type of issue:</label><br>
+    <select id="issue_type" name="issue_type" required>
+        <option value="choose">...</option>
+        <option value="safety">Safety</option>
+        <option value="maintenance">Maintenance</option>
+    </select><br><br>
+    <form>
+ <fieldset>
+    <legend>Severity Level:</legend>
+    <ol>
+        <li>
+            <label>
+                <input type="radio" name="severity" value="1">
+                Severity Level 1
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="radio" name="severity" value="2">
+                Severity Level 2
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="radio" name="severity" value="3">
+                Severity Level 3
+            </label>
+        </li>
+        <!-- Add more levels as needed -->
+    </ol>
+</fieldset>
+
+
+    <label for="description">Describe the problem:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="image">Upload a clear picture of the problem:</label><br>
+    <input type="file" id="image" name="image"><br><br>
+
+
+
+
+
+<button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+{% endblock %}

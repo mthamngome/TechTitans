@@ -1,0 +1,75 @@
+
+{% extends "index.html" %}{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reported Issues</title>
+    <style>
+        /* Use CSS to designate severity levels with both color and pattern or icon for colorblind users */
+        .severity-1 {
+            background-color: red;
+            background-image: url("severity-1.png");
+        }
+        .severity-2 {
+            background-color: orange;
+            background-image: url("severity-2.png");
+        }
+        .severity-3 {
+            background-color: yellow;
+            background-image: url("severity-3.png");
+        }
+    </style>
+</head>
+<body>
+<h1>Reported Issues</h1>
+ <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User ID</th>
+                <th>Severity</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Campus</th>
+                <th>Block</th>
+                <th>Room</th>
+                <th>Floor</th>
+                <th>Issue Type</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for issue in reported_issues %}
+            <tr>
+                <td>{{ issue.id }}</td>
+                <td>{{ issue.user_id }}</td>
+                <td>{{ issue.severity }}</td>
+                <td>{{ issue.description }}</td>
+                <td>{{ issue.status }}</td>
+                <td>{{ issue.campus }}</td>
+                <td>{{ issue.block }}</td>
+                <td>{{ issue.room }}</td>
+                <td>{{ issue.floor }}</td>
+                <td>{{ issue.issue_type }}</td>
+                <td>{{ issue.image }}</td>
+                <td>
+
+                    <a href="{{url_for('allocate_issue',id=issue.id)}}" class="btn">allocate</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}
+
+
+
+
+
+

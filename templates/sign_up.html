@@ -1,0 +1,49 @@
+{% extends "index.html" %}{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn-container {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .signup-form {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Sign Up</h2>
+        <div class="btn-container">
+            <button class="btn" onclick="location.href='/Staff_signup'">staff </button>
+            <button class="btn" onclick="location.href='/Student_signup'">Student</button>
+        </div>
+
+
+    </div>
+</body>
+</html>
+{% endblock %}
+
